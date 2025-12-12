@@ -47,6 +47,7 @@
     <meta property="og:title" content="Comunidade Desperta - Igreja Evangélica em Boqueirão, Curitiba">
     <meta property="og:description" content="Igreja cristã fundamentada na Palavra de Deus. Cultos domingo 18h, quinta 19h e sábado 18h. Rua Dr. Heleno da Silveira, 605 - Curitiba, PR.">
     <meta property="og:image" content="https://comunidadedesperta.online/images/favicon_comunidade_deserta.png">
+    <meta property="og:logo" content="https://comunidadedesperta.online/images/logo_comunidade_desperta.svg">
     <meta property="og:site_name" content="Comunidade Desperta">
     <meta property="og:locale" content="pt_BR">
 
@@ -55,6 +56,9 @@
     <meta name="twitter:title" content="Comunidade Desperta - Igreja Evangélica em Curitiba">
     <meta name="twitter:description" content="Igreja cristã fundamentada na Palavra de Deus. Cultos e estudos bíblicos em Boqueirão, Curitiba.">
     <meta name="twitter:image" content="https://comunidadedesperta.online/images/favicon_comunidade_deserta.png">
+
+    <!-- Logo para Google -->
+    <link rel="image_src" href="https://comunidadedesperta.online/images/logo_comunidade_desperta.svg">
 
     <!-- Schema.org JSON-LD para SEO local -->
     <script type="application/ld+json">
@@ -65,7 +69,12 @@
       "alternateName": "Instituto Igreja Comunidade Desperta",
       "description": "Igreja cristã evangélica fundamentada na Palavra de Deus, localizada em Boqueirão, Curitiba.",
       "url": "https://comunidadedesperta.online/",
-      "logo": "https://comunidadedesperta.online/images/favicon_comunidade_deserta.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://comunidadedesperta.online/images/logo_comunidade_desperta.svg",
+        "width": "512",
+        "height": "512"
+      },
       "image": "https://comunidadedesperta.online/images/comunidade_desperta_entrada_img.jpg",
       "telephone": "+55-41-9224-8429",
       "email": "rafaeljuniorcampos.2022@gmail.com",
@@ -119,7 +128,12 @@
       "@type": "Organization",
       "name": "Instituto Igreja Comunidade Desperta",
       "url": "https://comunidadedesperta.online/",
-      "logo": "https://comunidadedesperta.online/images/favicon_comunidade_deserta.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://comunidadedesperta.online/images/logo_comunidade_desperta.svg",
+        "width": "512",
+        "height": "512"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+55-41-9224-8429",
@@ -134,7 +148,45 @@
         "addressRegion": "PR",
         "postalCode": "81650-020",
         "addressCountry": "BR"
-      }
+      },
+      "sameAs": [
+        "https://www.facebook.com/igrejacomunidadedesperta",
+        "https://www.instagram.com/igrejacomunidadedesperta"
+      ]
+    }
+    </script>
+
+    <!-- Schema.org para Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://comunidadedesperta.online/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Quem Somos",
+          "item": "https://comunidadedesperta.online/#about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Programação",
+          "item": "https://comunidadedesperta.online/#schedule"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Contato",
+          "item": "https://comunidadedesperta.online/#contact"
+        }
+      ]
     }
     </script>
 </head>
