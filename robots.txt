@@ -1,0 +1,17 @@
+# robots.txt para Comunidade Desperta
+
+User-agent: *
+Allow: /
+
+# Permitir acesso a todas as imagens
+Allow: /images/
+
+# Permitir acesso aos arquivos CSS e JS
+Allow: /styles.css
+Allow: /script.js
+
+# Sitemap
+Sitemap: https://comunidadedesperta.online/sitemap.xml
+
+# Crawl-delay (opcional - ajuda a não sobrecarregar o servidor)
+Crawl-delay: 1
