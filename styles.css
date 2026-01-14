@@ -72,7 +72,6 @@ nav {
     transition: transform 0.3s ease;
 }
 
-/* Estilização do SVG da logo - cor marrom */
 .logo-svg {
     filter: brightness(0) saturate(100%) invert(19%) sepia(14%) saturate(1657%) hue-rotate(357deg) brightness(94%) contrast(90%);
 }
@@ -578,6 +577,144 @@ section {
     margin-bottom: 0;
 }
 
+.contribute-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contribute-card {
+    background: var(--card);
+    padding: 3rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.contribute-icon {
+    width: 4rem;
+    height: 4rem;
+    background: hsl(25, 60%, 45%, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.contribute-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.pix-box {
+    background: hsl(30, 10%, 92%, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 2px dashed var(--border);
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.pix-qrcode {
+    text-align: center;
+}
+
+.qrcode-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 0.5rem;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pix-divider {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin: 0.5rem 0;
+}
+
+.pix-divider::before,
+.pix-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background: var(--border);
+}
+
+.pix-divider::before {
+    left: 0;
+}
+
+.pix-divider::after {
+    right: 0;
+}
+
+.pix-divider span {
+    background: hsl(30, 10%, 92%, 0.5);
+    padding: 0 1rem;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.pix-key-section {
+    width: 100%;
+    text-align: center;
+}
+
+.pix-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.pix-key {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    font-family: 'Poppins', monospace;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+}
+
+.btn-copy {
+    padding: 0.875rem 2rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-copy:hover {
+    background: hsl(25, 60%, 40%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-copy:active {
+    transform: translateY(0);
+}
+
 footer {
     background: hsl(30, 10%, 92%, 0.3);
     border-top: 1px solid var(--border);
@@ -669,6 +806,24 @@ footer p {
 
     .about-text {
         order: 1;
+    }
+
+    .contribute-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .pix-box {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .qrcode-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .pix-key {
+        font-size: 1.125rem;
     }
 }
 

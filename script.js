@@ -9,6 +9,20 @@ const totalSlides = slides.length;
 
 let slideInterval; // intervalo armazenado
 
+// Função para copiar chave PIX
+function copyPixKey() {
+    const pixKey = document.getElementById('pixKey').textContent;
+    const copyText = document.getElementById('copyText');
+    
+    navigator.clipboard.writeText(pixKey).then(() => {
+        copyText.textContent = 'Copiado!';
+        setTimeout(() => {
+            copyText.textContent = 'Copiar Chave';
+        }, 2000);
+    }).catch(err => {
+        console.error('Erro ao copiar:', err);
+    });
+}
 // Função para mostrar um slide específico
 function showSlide(index) {
     slides.forEach((slide, i) => {
