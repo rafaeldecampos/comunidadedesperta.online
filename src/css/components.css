@@ -1,0 +1,145 @@
+/* ====================================
+   COMPONENT STYLES - Botões, Cards, etc
+   ==================================== */
+
+/* Botões */
+.btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: hsl(25, 60%, 40%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-copy {
+    padding: 0.875rem 2rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-copy:hover {
+    background: hsl(25, 60%, 40%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-copy:active {
+    transform: translateY(0);
+}
+
+/* Cards */
+.card {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+.card-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: hsl(25, 60%, 45%, 0.1);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--primary);
+}
+
+.card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.card p {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Citações */
+.quote {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote blockquote {
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+    line-height: 1.4;
+}
+
+.quote cite {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    font-style: normal;
+}
+
+/* Divisor */
+.divider {
+    width: 4rem;
+    height: 4px;
+    background: var(--primary);
+    margin: 0 auto 1.5rem;
+}
+
+/* Info Box */
+.info-box {
+    background: hsl(30, 10%, 92%, 0.5);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}

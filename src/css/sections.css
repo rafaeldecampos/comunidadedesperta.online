@@ -1,0 +1,372 @@
+/* ====================================
+   SECTION STYLES
+   ==================================== */
+
+section {
+    padding: 4rem 1.5rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+/* ====================================
+   HERO SECTION
+   ==================================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--background) 0%, hsl(36, 20%, 92%) 50%, var(--background) 100%);
+    padding: 6rem 1.5rem 4rem;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.hero h1 .highlight {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--muted-foreground);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    color: var(--muted-foreground);
+}
+
+/* ====================================
+   ABOUT SECTION
+   ==================================== */
+
+#about {
+    padding-bottom: 5rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.about-image img.active {
+    opacity: 1;
+    position: relative;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background: white;
+    width: 24px;
+    border-radius: 4px;
+}
+
+.about-text h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    color: var(--muted-foreground);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* ====================================
+   SCHEDULE SECTION
+   ==================================== */
+
+.schedule-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.schedule-card {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.schedule-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.schedule-card .time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* Map Card */
+.map-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.map-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.map-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.map-frame {
+    width: 100%;
+    height: 400px;
+    filter: grayscale(0.8) opacity(0.8);
+    transition: all 0.5s ease;
+}
+
+.map-frame:hover {
+    filter: grayscale(0) opacity(1);
+}
+
+/* ====================================
+   CONTRIBUTE SECTION
+   ==================================== */
+
+.contribute-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contribute-card {
+    background: var(--card);
+    padding: 3rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.contribute-icon {
+    width: 4rem;
+    height: 4rem;
+    background: hsl(25, 60%, 45%, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.contribute-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* PIX Box */
+.pix-box {
+    background: hsl(30, 10%, 92%, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 2px dashed var(--border);
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.pix-qrcode {
+    text-align: center;
+}
+
+.qrcode-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 0.5rem;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pix-divider {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin: 0.5rem 0;
+}
+
+.pix-divider::before,
+.pix-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background: var(--border);
+}
+
+.pix-divider::before {
+    left: 0;
+}
+
+.pix-divider::after {
+    right: 0;
+}
+
+.pix-divider span {
+    background: hsl(30, 10%, 92%, 0.5);
+    padding: 0 1rem;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.pix-key-section {
+    width: 100%;
+    text-align: center;
+}
+
+.pix-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.pix-key {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    font-family: var(--font-primary), monospace;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+}
+
+/* ====================================
+   CONTACT SECTION
+   ==================================== */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    width: 2.75rem;
+    height: 2.75rem;
+    background: hsl(25, 60%, 45%, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* ====================================
+   FOOTER
+   ==================================== */
+
+footer {
+    background: hsl(30, 10%, 92%, 0.3);
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+}
+
+footer p {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+}

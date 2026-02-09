@@ -1,0 +1,79 @@
+/* ====================================
+   BASE STYLES - Variáveis e Reset Global
+   ==================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Cores */
+    --background: hsl(0, 0%, 98%);
+    --foreground: hsl(25, 15%, 25%);
+    --card: hsl(0, 0%, 100%);
+    --primary: hsl(25, 60%, 45%);
+    --primary-foreground: hsl(0, 0%, 100%);
+    --muted: hsl(30, 10%, 92%);
+    --muted-foreground: hsl(25, 10%, 50%);
+    --border: hsl(30, 10%, 88%);
+    
+    /* Espaçamento */
+    --radius: 0.75rem;
+    --logo-color: #44341a;
+    
+    /* Tipografia */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+}
+
+/* Animações Globais */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Classes Utilitárias */
+.bg-muted {
+    background: var(--muted);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}

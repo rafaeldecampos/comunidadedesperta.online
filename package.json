@@ -1,0 +1,39 @@
+{
+  "name": "comunidadedesperta.online",
+  "version": "1.0.0",
+  "description": "Site oficial da Comunidade Desperta - Igreja Evangélica em Boqueirão, Curitiba",
+  "type": "module",
+  "main": "src/js/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src/",
+    "format": "prettier --write \"src/**/*.{js,css,html}\"",
+    "test": "vitest"
+  },
+  "keywords": [
+    "igreja",
+    "evangélica",
+    "curitiba",
+    "comunidade",
+    "cristã"
+  ],
+  "author": "Instituto Igreja Comunidade Desperta",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@vitejs/plugin-basic-ssl": "^1.0.0",
+    "eslint": "^8.52.0",
+    "prettier": "^3.0.0",
+    "vitest": "^0.34.0"
+  },
+  "dependencies": {
+    "lucide": "^0.292.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "> 0.2%"
+  ]
+}

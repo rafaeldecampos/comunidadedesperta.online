@@ -1,0 +1,108 @@
+/* ====================================
+   RESPONSIVE DESIGN - Media Queries
+   ==================================== */
+
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 1.5rem;
+    }
+
+    /* Header */
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    /* Grid Layouts */
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .schedule-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 5rem 1.5rem 3rem;
+        min-height: 90vh;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    /* Map */
+    .map-frame {
+        height: 300px;
+    }
+
+    /* Cards and Components */
+    .quote {
+        padding: 1.5rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .schedule-card {
+        padding: 1.5rem;
+    }
+
+    /* About Section */
+    .about-image {
+        order: 2;
+    }
+
+    .about-text {
+        order: 1;
+    }
+
+    /* Contribute */
+    .contribute-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .pix-box {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .qrcode-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .pix-key {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo span {
+        font-size: 1.1rem;
+    }
+
+    .mobile-menu {
+        max-width: 280px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+}
