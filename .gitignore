@@ -1,33 +1,52 @@
-# Node modules (quando usar npm)
+# Node modules
 node_modules/
 package-lock.json
 yarn.lock
+pnpm-lock.yaml
 
-# Vite dist output
+# Build outputs
 dist/
 build/
+.next/
+out/
 
-# IDE
+# IDE & Editors
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 .DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+Thumbs.db
+desktop.ini
+.windows
+.mac
 
 # Logs
 *.log
 npm-debug.log*
 yarn-debug.log*
+pnpm-debug.log*
 
-# OldFiles
+# Temporary & Backup Files
 *.old
 *.backup
+*.bak
+*.tmp
+*.new
+*~
+.cache/
 
 # Environment
 .env
 .env.local
 .env.*.local
+.env.production.local
 
-# Editor
-.editorconfig
+# Dependencies lock files (apenas em projetos sem yarn/pnpm)
+# Descomente se necessário:
+# .npmrc
