@@ -1,0 +1,192 @@
+/* Floating Retreat Widget */
+.retreat-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 3000;
+    font-family: 'Inter', sans-serif;
+}
+
+.retreat-fab {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.retreat-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.fab-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ef4444;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--background);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.retreat-popover {
+    position: absolute;
+    bottom: 4.5rem;
+    right: 0;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: bottom right;
+}
+
+.retreat-widget.active .retreat-popover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.popover-header {
+    margin-bottom: 1rem;
+}
+
+.popover-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(37, 211, 102, 0.15);
+    color: #075e54;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.popover-header h3 {
+    font-size: 1.25rem;
+    color: var(--foreground);
+    margin: 0;
+}
+
+.popover-body p {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.popover-body p a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.popover-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--foreground);
+    font-weight: 500;
+}
+
+.info-row i {
+    color: var(--primary);
+    width: 18px;
+    height: 18px;
+}
+
+.popover-actions p {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    margin-bottom: 0.75rem;
+}
+
+.popover-whatsapp {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.btn-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-wa:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .retreat-widget {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .retreat-popover {
+        width: calc(100vw - 3rem);
+        max-width: 320px;
+    }
+}
