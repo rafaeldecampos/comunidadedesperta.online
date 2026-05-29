@@ -19,6 +19,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -152,6 +153,8 @@ nav {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    color: var(--foreground);
+    flex: 0 0 auto;
 }
 
 .mobile-menu-btn svg {
@@ -163,13 +166,14 @@ nav {
 .mobile-menu {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 100%;
     max-width: 320px;
     height: 100vh;
     background: var(--card);
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
-    transition: right 0.3s ease;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
     z-index: 2000;
     display: flex;
     flex-direction: column;
@@ -178,7 +182,7 @@ nav {
 }
 
 .mobile-menu.active {
-    right: 0;
+    transform: translateX(0);
 }
 
 .mobile-menu-overlay {
@@ -860,4 +864,463 @@ footer p {
 
 .text-center {
     text-align: center;
+}
+
+/* Visual refinement pass */
+:root {
+    --background: hsl(36, 24%, 97%);
+    --foreground: hsl(25, 18%, 20%);
+    --primary-dark: hsl(25, 58%, 36%);
+    --primary-soft: hsla(25, 60%, 45%, 0.1);
+    --muted: hsl(34, 23%, 92%);
+    --muted-foreground: hsl(25, 10%, 43%);
+    --border: hsl(32, 18%, 84%);
+    --radius: 0.5rem;
+    --container: 1180px;
+    --section-padding: clamp(4rem, 7vw, 6.5rem);
+    --shadow-sm: 0 4px 14px rgba(68, 52, 26, 0.08);
+    --shadow-md: 0 14px 34px rgba(68, 52, 26, 0.12);
+}
+
+body {
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.15;
+}
+
+p {
+    max-width: 68ch;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.92);
+}
+
+header.scrolled {
+    box-shadow: var(--shadow-sm);
+}
+
+nav,
+.container {
+    max-width: var(--container);
+}
+
+nav {
+    min-height: 78px;
+    padding: 0.85rem 1.5rem;
+}
+
+.mobile-menu .mobile-nav {
+    max-width: none;
+    min-height: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.mobile-menu .mobile-nav a {
+    width: 100%;
+}
+
+@media (max-width: 1080px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-left: auto;
+    }
+}
+
+.logo span {
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+.nav-links {
+    gap: 1.25rem;
+}
+
+.btn,
+.btn-copy {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    line-height: 1;
+}
+
+.btn {
+    padding: 0.75rem 1.35rem;
+}
+
+.btn:hover,
+.btn-copy:hover {
+    background: var(--primary-dark);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+}
+
+.hero {
+    min-height: 92vh;
+    padding: 7rem 1.5rem 4.5rem;
+    background:
+        linear-gradient( hsla(29, 49%, 48%, 0.185), hsl(0, 0%, 100%)),
+        url('images/comunidade_desperta_pessoas_img_fundo.jpg') center/cover;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 10rem;
+    background: linear-gradient(transparent, var(--background));
+    pointer-events: none;
+}
+
+.hero-content,
+.scroll-indicator {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    color: hsl(25, 15%, 25%);
+    letter-spacing: 0;
+    text-wrap: balance;
+}
+
+.hero h1 .highlight {
+    color:  hsl(25, 58%, 36%);
+}
+
+.hero p {
+    color: hsl(25, 15%, 25%);
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.scroll-indicator {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+section {
+    padding: var(--section-padding) 1.5rem;
+}
+
+.section-header {
+    max-width: 760px;
+    margin: 0 auto clamp(2rem, 4vw, 3.25rem);
+}
+
+.section-header h2 {
+    letter-spacing: 0;
+    text-wrap: balance;
+}
+
+.section-header p {
+    margin: 0 auto;
+    color: var(--muted-foreground);
+}
+
+.divider {
+    width: 3.5rem;
+    height: 3px;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+}
+
+.divider-left {
+    margin-left: 0;
+}
+
+.about-grid {
+    gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.about-image {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius);
+    background: var(--muted);
+    box-shadow: var(--shadow-md);
+}
+
+.about-image img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.cards-grid,
+.schedule-cards {
+    gap: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.values-grid {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card,
+.schedule-card,
+.quote,
+.map-card,
+.contribute-card {
+    border-radius: var(--radius);
+}
+
+.card {
+    padding: clamp(1.35rem, 2vw, 1.75rem);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.card-icon,
+.contribute-icon,
+.social-link {
+    background: var(--primary-soft);
+}
+
+.card-icon {
+    border-radius: var(--radius);
+}
+
+.card--left {
+    text-align: left;
+}
+
+.card--left .card-icon {
+    margin: 0 0 1rem;
+}
+
+.quote,
+.map-card,
+.schedule-card {
+    box-shadow: var(--shadow-sm);
+}
+
+.quote {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.schedule-card,
+.map-info {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.schedule-description {
+    color: var(--muted-foreground);
+    margin: 0.5rem auto;
+}
+
+.section-icon {
+    color: var(--primary);
+}
+
+.icon-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.map-info p {
+    margin: 0 auto 1.5rem;
+    color: var(--foreground);
+}
+
+.map-frame {
+    display: block;
+    border: 0;
+}
+
+.contact-grid {
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: start;
+}
+
+.contact-block {
+    margin-bottom: 2rem;
+}
+
+.contact-block h3,
+.info-box h3 {
+    margin-bottom: 1rem;
+}
+
+.info-box,
+.pix-box {
+    background: hsla(34, 23%, 92%, 0.62);
+    border-radius: var(--radius);
+}
+
+.info-box p,
+.contact-link {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.info-box p {
+    margin-bottom: 1.5rem;
+}
+
+.info-box p:last-child {
+    margin-bottom: 0;
+}
+
+.info-box-spaced {
+    margin-bottom: 2rem;
+}
+
+.contact-link {
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contribute-card {
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.contribute-card>p {
+    margin: 1rem auto 2rem;
+    color: var(--muted-foreground);
+}
+
+.quote-spaced {
+    margin-top: 2rem;
+}
+
+.pix-box {
+    padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.qr-caption {
+    color: var(--muted-foreground);
+    font-size: 0.75rem;
+    margin: 0.5rem auto 0;
+}
+
+.qrcode-image {
+    border-radius: var(--radius);
+}
+
+.pix-divider span {
+    background: hsl(34, 23%, 92%);
+}
+
+footer {
+    background: hsla(34, 23%, 92%, 0.55);
+}
+
+.close-icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 3.5rem 1.25rem;
+    }
+
+    nav {
+        min-height: 70px;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .hero {
+        min-height: 86vh;
+        padding: 5.5rem 1.25rem 4rem;
+    }
+
+    .hero-content {
+        width: min(100%, 34rem);
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cards-grid,
+    .schedule-cards {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .card--left {
+        text-align: center;
+    }
+
+    .card--left .card-icon {
+        margin: 0 auto 1rem;
+    }
+
+    .mobile-menu {
+        width: min(86vw, 320px);
+        max-width: none;
+    }
+
+    .mobile-menu .btn-primary {
+        width: 100%;
+    }
+
+    .info-item {
+        align-items: flex-start;
+    }
+
+    .contribute-card {
+        padding: 2rem 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding-inline: 1rem;
+    }
+
+    .logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo span {
+        font-size: 1rem;
+    }
+
+    .mobile-menu {
+        width: min(88vw, 300px);
+    }
+
+    .hero h1 {
+        font-size: 2.35rem;
+    }
+
+    .pix-key {
+        font-size: 1rem;
+    }
 }
